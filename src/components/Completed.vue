@@ -2,25 +2,22 @@
     <div class="kindlly">
         <div class="header">
             <div class="info">
-                <h4>{{myKindlly.description}}</h4>
+                <h4>{{Completed.description}}</h4>
                 <div>
-                    <p class="cost" v-if="myKindlly.cost == 0"><span></span><span class="faded">FREE</span></p>
-                    <p class="cost" v-if="myKindlly.cost == 1"><span>$</span><span class="faded">$$</span></p>
-                    <p class="cost" v-if="myKindlly.cost == 2"><span>$$</span><span class="faded">$</span></p>
-                    <p class="cost" v-if="myKindlly.cost == 3"><span>$$$</span></p>
+                    <p class="cost" v-if="Completed.cost == 0"><span></span><span class="faded">FREE</span></p>
+                    <p class="cost" v-if="Completed.cost == 1"><span>$</span><span class="faded">$$</span></p>
+                    <p class="cost" v-if="Completed.cost == 2"><span>$$</span><span class="faded">$</span></p>
+                    <p class="cost" v-if="Completed.cost == 3"><span>$$$</span></p>
                     <p class="date">{{age}}</p>
                 </div>
             </div>
             <p class="points">
-                <span class="value">+{{myKindlly.points}}</span><br />
+                <span class="value">+{{Completed.points}}</span><br />
                 <span class="label">KP</span>
             </p>
         </div>
         <section class="buttons">
-            <a @click="$emit('complete-kindlly', myKindlly)" class="complete-button button"> ◯ Complete</a>
-            <a @click="$emit('remove-kindlly', myKindlly)" class="button delete-button">
-                <i class="el el-trash"></i>
-            </a>
+			<a @click="$emit('uncomplete-kindlly', Completed)" class="complete-button button"> Completed</a>
         </section>
     </div>
 </template>
@@ -29,9 +26,9 @@
 import ago from 's-ago'
 
 export default {
-	name: 'MyKindlly',
+	name: 'Completed',
 	props: {
-		myKindlly: Object
+		Completed: Object
 	},
     data: function() {
 		return {
