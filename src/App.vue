@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Kindlly/>
+    <div id="nav">
+      <router-link to="/">Contribute
+    </div>
+    <router-view />
   </div>
 </template>
 
